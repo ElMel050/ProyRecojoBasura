@@ -9,10 +9,25 @@ package proyectprog2.proyrecojobasura;
  * @author Lenovo
  */
 public class Sensor {
-    private String marca;
-    private double id_sensor;
+    protected String marca;
+    protected String idSensor;
     private Contenedor contenedor;
     //
+
+    public Sensor() {
+        this.marca = "SensoTech";
+        this.idSensor = "SEN001";
+        this.contenedor = new Contenedor();
+    }
+
+    public Sensor(String marca, String idSensor) {
+        this.marca = marca;
+        this.idSensor = idSensor;
+    }
+
+    public boolean detectarEstadoContenedor() {
+        return false; // se redefine en subclases
+    }
 
     public String getMarca() {
         return marca;
@@ -22,12 +37,12 @@ public class Sensor {
         this.marca = marca;
     }
 
-    public double getId_sensor() {
-        return id_sensor;
+    public String getIdSensor() {
+        return idSensor;
     }
 
-    public void setId_sensor(double id_sensor) {
-        this.id_sensor = id_sensor;
+    public void setIdSensor(String idSensor) {
+        this.idSensor = idSensor;
     }
 
     public Contenedor getContenedor() {
@@ -39,12 +54,9 @@ public class Sensor {
     }
     //
 
-    public Sensor() {
-    }
-
     public Sensor(String marca, double id_sensor, Contenedor contenedor) {
         this.marca = marca;
-        this.id_sensor = id_sensor;
+        this.idSensor = String.valueOf(id_sensor);
         this.contenedor = contenedor;
     }
     

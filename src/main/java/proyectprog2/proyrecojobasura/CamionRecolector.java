@@ -9,48 +9,77 @@ package proyectprog2.proyrecojobasura;
  * @author Lenovo
  */
 public class CamionRecolector {
-    private double id_camion;
-    //private Ruta ruta_asignada;
-    private String horario;
-    //
+    private String idCamion;
+    private double cargaMaxima;
+    private String horarioRecojo;
+    private Ruta ruta;
+    private SensorCarga sensorCarga;
 
-    public double getId_camion() {
-        return id_camion;
-    }
-
-    public void setId_camion(double id_camion) {
-        this.id_camion = id_camion;
-    }
-
-//    public Ruta getRuta_asignada() {
-//        return ruta_asignada;
-//    }
-//
-//    public void setRuta_asignada(Ruta ruta_asignada) {
-//        this.ruta_asignada = ruta_asignada;
-//    }
-
-    public String getHorario() {
-        return horario;
+    public CamionRecolector() {
+        this.idCamion = "CAM001";
+        this.cargaMaxima = 5000.0;
+        this.horarioRecojo = "Mañana";
+        this.ruta = new Ruta();
+        this.sensorCarga = new SensorCarga("SensoTech", "SEN001", 5000.0);
     }
 
-    public void setHorario(String horario) {
-        this.horario = horario;
+    public CamionRecolector(String idCamion, double cargaMaxima, String horarioRecojo, Ruta ruta, SensorCarga sensorCarga) {
+        this.idCamion = idCamion;
+        this.cargaMaxima = cargaMaxima;
+        this.horarioRecojo = horarioRecojo;
+        this.ruta = ruta;
+        this.sensorCarga = sensorCarga;
     }
-    ////
-    ///
-    public CamionRecolector(double id_camion, String horario) {
-        this.id_camion = id_camion;
-        //this.ruta_asignada=new Ruta();
-        this.horario = horario;
+
+    public boolean estaLleno() {
+        return sensorCarga.detectarEstadoContenedor();
     }
-    public CamionRecolector(){
-        id_camion = 12.2;
-        //ruta_asignada=new Ruta("",2,"");
-        horario = "mañana";
+
+    public void mostrarRuta() {
+        ruta.mostrarRuta();
     }
-    
-    //
+
+    // Getters y Setters
+    public String getIdCamion() {
+        return idCamion;
+    }
+
+    public void setIdCamion(String idCamion) {
+        this.idCamion = idCamion;
+    }
+
+    public double getCargaMaxima() {
+        return cargaMaxima;
+    }
+
+    public void setCargaMaxima(double cargaMaxima) {
+        this.cargaMaxima = cargaMaxima;
+    }
+
+    public String getHorarioRecojo() {
+        return horarioRecojo;
+    }
+
+    public void setHorarioRecojo(String horarioRecojo) {
+        this.horarioRecojo = horarioRecojo;
+    }
+
+    public Ruta getRuta() {
+        return ruta;
+    }
+
+    public void setRuta(Ruta ruta) {
+        this.ruta = ruta;
+    }
+
+    public SensorCarga getSensorCarga() {
+        return sensorCarga;
+    }
+
+    public void setSensorCarga(SensorCarga sensorCarga) {
+        this.sensorCarga = sensorCarga;
+    }
+
     public void leer(){
         System.out.println("ingrese datos del camion");
         //id_camion = lec.nextDouble();
