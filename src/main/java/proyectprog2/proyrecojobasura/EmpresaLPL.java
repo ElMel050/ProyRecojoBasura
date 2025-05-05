@@ -51,4 +51,28 @@ public class EmpresaLPL {
             System.out.println("Nombre:" + emp.getNombre()+",CI :" + emp.getCi() + ",id" + emp.getIdEmpleados());
         }
     }
+    public List<Empleado> getEmpleados(){
+        return empleados;
+    }
+    public void setEmpleados(List<Empleado> empleados){
+        this.empleado = empleados;
+    }
+    public List<CamionRecolector> getCamiones(){
+        return camiones;
+    }
+    public void setCamiones(List<CamionesRecolector> camiones){
+        this.camiones = camiones;
+    }
+    public List<Contenedore> getContenedores(){
+        return contenedores;
+    }
+    public void setContenedores(List<Contenedores> contenedores){
+        this.contenedores = contenedores;
+    }
+    public List<Ruta> getRutas(){
+        return rutas;
+    }
+    public void setRutas(List<Rutas> rutas){
+        this.rutas = rutas;
+    } 
 } 
