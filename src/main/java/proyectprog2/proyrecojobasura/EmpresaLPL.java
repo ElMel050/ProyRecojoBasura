@@ -45,4 +45,10 @@ public class EmpresaLPL {
         System.out.println("Total de contenedores: " + contenedores.size());
         System.out.println("Total de rutas: " + rutas.size());
     }
+    public void motrarEmpleados(){
+        System.out.println("Lista de empleados");
+        for (Empleados emp : empleados){
+            System.out.println("Nombre:" + emp.getNombre()+",CI :" + emp.getCi() + ",id" + emp.getIdEmpleados());
+        }
+    }
 } 
