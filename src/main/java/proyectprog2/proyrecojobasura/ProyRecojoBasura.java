@@ -23,7 +23,7 @@ public class ProyRecojoBasura {
             System.out.print("Seleccione una opciÃ³n: ");
             
             opcion = scanner.nextInt();
-            scanner.nextLine(); // Limpiar el buffer
+            scanner.nextLine(); 
 
             switch (opcion) {
                 case 1:
@@ -72,8 +72,7 @@ public class ProyRecojoBasura {
         String horario = scanner.nextLine();
 
         Empleado empleado = new Empleado(nombre, edad, ci, idEmpleado, horario);
-        
-        // Agregar puntos de control
+    
         System.out.print("Â¿Desea agregar puntos de control? (s/n): ");
         String respuesta = scanner.nextLine();
         
@@ -123,7 +122,6 @@ public class ProyRecojoBasura {
         
         SensorCarga sensor = new SensorCarga(marcaSensor, idSensor, cargaMaxima);
         
-        // Crear ruta bÃ¡sica
         Ruta ruta = new Ruta();
         
         CamionRecolector camion = new CamionRecolector(idCamion, cargaMaxima, horarioRecojo, ruta, sensor);
@@ -149,7 +147,6 @@ public class ProyRecojoBasura {
         double capacidadMax = scanner.nextDouble();
         scanner.nextLine();
         
-        // Crear sensor de carga
         System.out.println("\n--- DATOS DEL SENSOR DE CARGA ---");
         System.out.print("Marca del sensor: ");
         String marcaSensor = scanner.nextLine();
@@ -204,12 +201,12 @@ public class ProyRecojoBasura {
         double pesoBasura = scanner.nextDouble();
         scanner.nextLine();
         
-        // Simular recolecciÃ³n por camiones
+        
         System.out.println("\n--- ESTADO DE LOS CONTENEDORES ---");
-        // AquÃ­ irÃ­a la lÃ³gica para simular el llenado de contenedores
+        
         
         System.out.println("\n--- ESTADO DE LOS CAMIONES ---");
-        // AquÃ­ irÃ­a la lÃ³gica para simular la recolecciÃ³n por camiones
+        
         
         System.out.println("SimulaciÃ³n completada!");
     }
